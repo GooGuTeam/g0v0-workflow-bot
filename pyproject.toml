@@ -15,7 +15,7 @@ dependencies = [
     "pydantic-ai-harness[github]>=0.54.0",
     "pydantic-ai-slim[openai]>=2.54.0",
     "aiowhales>=0.1.1",
-    "nonebot-plugin-orm>=0.8.4",
+    "nonebot-plugin-orm[postgresql]>=0.8.4",
     "nb-cli>=1.7.4",
 ]
 
