@@ -16,6 +16,7 @@ dependencies = [
     "pydantic-ai-slim[openai]>=2.54.0",
     "aiowhales>=0.1.1",
     "nonebot-plugin-orm>=0.8.4",
+    "nb-cli>=1.7.4",
 ]
 
 [project.optional-dependencies]
