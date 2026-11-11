@@ -5,7 +5,7 @@ from nonebot_plugin_orm import Model
 from pydantic import BaseModel, Field
 from pydantic_ai import RunUsage
 from pydantic_ai.settings import ThinkingLevel
-from sqlalchemy import Text
+from sqlalchemy import BigInteger, Text
 from sqlalchemy.orm import Mapped, mapped_column
 
 
@@ -52,9 +52,9 @@ class ReviewQueueItem(Model):
     repo: Mapped[str] = mapped_column(index=True)
     pr: Mapped[int] = mapped_column(index=True)
     app_id: Mapped[str] = mapped_column()
-    installation_id: Mapped[int] = mapped_column()
-    comment_id: Mapped[int | None] = mapped_column(index=True)
-    summary_comment_id: Mapped[int | None] = mapped_column()
+    installation_id: Mapped[int] = mapped_column(BigInteger)
+    comment_id: Mapped[int | None] = mapped_column(BigInteger, index=True)
+    summary_comment_id: Mapped[int | None] = mapped_column(BigInteger)
     extra_prompt: Mapped[str | None] = mapped_column(Text)
     status: Mapped[str] = mapped_column(default="pending", index=True)
     priority: Mapped[int] = mapped_column(default=1)
